@@ -48,6 +48,5 @@
     <developerConnection>
         scm:git:git@github.com:taycavbah/sfg-pet-clinic.git
     </developerConnection>
-  <tag>v.0.0.2</tag>
   </scm>
 </project>
