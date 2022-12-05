@@ -1,10 +1,7 @@
 package guru.springframework.sfgpetclinic.services;
+
 import guru.springframework.sfgpetclinic.model.Vet;
 
-public interface VetService {
-    Vet findById(long id);
+public interface VetService extends CrudService<Vet, Long>{
 
-    Vet Save(Vet vet);
-
-    Set<Vet> findAll();
 }
