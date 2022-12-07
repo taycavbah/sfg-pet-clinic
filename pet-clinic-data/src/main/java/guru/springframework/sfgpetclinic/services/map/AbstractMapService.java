@@ -1,6 +1,6 @@
 package guru.springframework.sfgpetclinic.services.map;
 
-import java.util.Collections;
+import java.util.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -39,16 +39,16 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
     }
 
     void delete(T object){
-        //map.entrySet().removeIf((entry) -> entry.getValue().equals(object));
+        map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
     private Long getNextId(){
         Long nextId = null;
-       // try{
-            nextId =  Collections.max(map.keySet()) + 1;
-       // }catch (NoSuchElementException e){
-        //    nextId = 1L;
-        //}
+        try {
+            nextId = Collections.max(map.keySet()) + 1;
+        } catch (NoSuchElementException e) {
+            nextId = 1L;
+        }
 
         return nextId;
     }
