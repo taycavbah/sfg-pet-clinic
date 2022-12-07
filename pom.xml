@@ -61,4 +61,12 @@
     </developerConnection>
     <tag>sfg-pet-clinic-0.0.2</tag>
   </scm>
+
+  <distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>file://Users/628079/Documents/springboot</url>
+       </repository>
+   </distributionManagement>
 </project>
