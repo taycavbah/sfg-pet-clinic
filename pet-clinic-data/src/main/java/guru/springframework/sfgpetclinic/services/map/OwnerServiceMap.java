@@ -2,8 +2,6 @@ package guru.springframework.sfgpetclinic.services.map;
 
 import java.util.Set;
 
-import javax.swing.text.DefaultStyledDocument.ElementSpec;
-
 import org.springframework.stereotype.Service;
 
 import guru.springframework.sfgpetclinic.model.Owner;
@@ -39,7 +37,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         if(object != null){
             if (object.getPets() != null){
                 object.getPets().forEach(pet -> {
-                    if (pet.getPetType().getId() == null){
+                    if (pet.getPetType() != null){
                         if(pet.getPetType().getId() == null){
                             pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
@@ -52,8 +50,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
                     }
                 });
             }
+            return super.save(object);
+        } else{
+            return null;
         }
-        return super.save(object);
+
     }
 
     @Override

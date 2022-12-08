@@ -5,7 +5,6 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.sfgpetclinic.model.Specialty;
-import guru.springframework.sfgpetclinic.services.CrudService;
 import guru.springframework.sfgpetclinic.services.SpecialtyService;
 
 @Service
